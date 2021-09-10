@@ -11,7 +11,7 @@ resource "google_dns_record_set" "dns-record" {
   managed_zone = google_dns_managed_zone.dns-zone.name
   name         = each.value.name
   type         = each.value.type
-  rrdatas      = each.value.rrdatas
+  rrdatas      = [each.value.rrdatas]
   ttl          = each.value.ttl
 }
 
